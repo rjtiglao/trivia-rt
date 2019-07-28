@@ -86,8 +86,6 @@ function show(){
 
 
 function hide(){
-    countHide.setAttribute("style", "display:none");
-    answer1.setAttribute("style", "display:none");
     answer2.setAttribute("style", "display:none");
     answer3.setAttribute("style", "display:none");
     answer4.setAttribute("style", "display:none");
@@ -132,11 +130,12 @@ function answerCheck(){
             correctAnswer++
         }
     }
-    console.log(`You got ${correctAnswer} right!`)
+
+    document.getElementById("question").innerHTML = `You got ${correctAnswer}/10 questions correct!`;
+    answer1.innerHTML = `Restart the Game`;
+    
 }
 //MAIN CODE
-
-// document.getElementById("answer1").onclick = function change(e){
  function change(){
 
     // displays rest of buttons
