@@ -1,8 +1,9 @@
 
 
 let qna = [{
-        question: "What is the question?",
-        answer: "What is the answer?",
+        question: "One of the first science fiction films to be taken seriously by critics and movie-goers alike, this 1968 movie was made by Stanley Kubrick. Which film is this?",
+        choices:["Fantastic Voyage", "this is choice 2","this is choice 3","this is choice 4"],
+        answer: "this is choice 2",
         user: ""
     },{
         question: "This is the question!",
@@ -11,38 +12,11 @@ let qna = [{
         
     }];
 
-let true1 = document.getElementById("trueBtn");
-let false1 = document.getElementsByClassName("falseBtn");
+let answer1 = document.getElementById("answer1");
+let answer2 = document.getElementById("answer2");
 let quest = document.getElementById("test1");
 let count = 0;
-
-
-
-true1.onclick = function change(){
-
-    for(i=-1;i<qna.length;i++){
-    if(count === 0){
-        alert("Game has started")
-        count++
-    }
-    else{
-    qna[i]["user"] =  prompt(qna[i]["question"]);
-    console.log(qna[i]["user"]);
-    console.log(qna[i]["question"]);
-    console.log(quest); 
-    document.getElementById("test1").innerHTML = qna[i]["question"];
-    let text=document.getElementById("texting").value;
-    qna[i].user=text;
-    console.log(qna[i].user);
-    }   
-};
-};
-
-// document.getElementById(`#button`).innerHTML = "Hello World!";
-
-// asking a question and saving the answer
-
-
+let answerCount=0;
 
 
 function timer(){
@@ -55,3 +29,32 @@ function timer(){
         }
     }, 1000);
 }
+
+let check = function(){
+    
+}
+
+document.getElementsByTagName('BUTTON').click = function change(){
+    for(i=-1;i<qna.length;i++){
+        if(count === 0){
+            alert("Game has started")
+            count++
+            timer();
+        }
+        else{
+            document.getElementById("question").innerHTML = qna[answerCount]["question"];
+            document.getElementById("answer1").innerHTML = qna[answerCount]["choices"][0];
+            document.getElementById("answer2").innerHTML = qna[answerCount]["choices"][1];
+            document.getElementById("answer3").innerHTML = qna[answerCount]["choices"][2];
+            document.getElementById("answer4").innerHTML = qna[answerCount]["choices"][3];
+
+        }   
+    };
+};
+
+// document.getElementById(`#button`).innerHTML = "Hello World!";
+
+// asking a question and saving the answer
+
+
+
