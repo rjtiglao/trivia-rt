@@ -34,22 +34,43 @@ let check = function(){
     
 }
 
-document.getElementsByTagName('BUTTON').click = function change(){
-    for(i=-1;i<qna.length;i++){
-        if(count === 0){
-            alert("Game has started")
-            count++
-            timer();
-        }
-        else{
-            document.getElementById("question").innerHTML = qna[answerCount]["question"];
-            document.getElementById("answer1").innerHTML = qna[answerCount]["choices"][0];
-            document.getElementById("answer2").innerHTML = qna[answerCount]["choices"][1];
-            document.getElementById("answer3").innerHTML = qna[answerCount]["choices"][2];
-            document.getElementById("answer4").innerHTML = qna[answerCount]["choices"][3];
+let test = document.getElementById("answer1");
+console.log(answer1);
 
-        }   
-    };
+
+//starts function onclick
+
+test.onclick = function change(){
+
+    //variables
+    let answer1 = document.getElementById("answer1");
+    let answer2 = document.getElementById("answer2");
+    let answer3 = document.getElementById("answer3");
+    let answer4 = document.getElementById("answer4");
+    let hidden = answer2.getAttribute("style");
+
+    // displays rest of buttons
+    if(hidden === "display:none"){
+        answer2.setAttribute("style", " ");
+        answer3.setAttribute("style", " ");
+        answer4.setAttribute("style", " ");
+
+    }
+    
+    alert("Game has started")
+    count++
+    timer();
+    document.getElementById("question").innerHTML = qna[answerCount]["question"];
+    
+    // updates text in buttons with choices appropriate for the question
+    answer1.innerHTML = qna[answerCount]["choices"][0];
+    answer2.innerHTML = qna[answerCount]["choices"][1];
+    answer3.innerHTML = qna[answerCount]["choices"][2];
+    answer4.innerHTML = qna[answerCount]["choices"][3];
+    answer1.setAttribute("data-answer",qna[answerCount]["choices"][0]);
+    answer2.setAttribute("data-answer",qna[answerCount]["choices"][1]);
+    answer3.setAttribute("data-answer",qna[answerCount]["choices"][2]);
+    answer4.setAttribute("data-answer",qna[answerCount]["choices"][3]);
 };
 
 // document.getElementById(`#button`).innerHTML = "Hello World!";
