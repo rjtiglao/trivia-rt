@@ -10,10 +10,9 @@ let qna = [{
     },{
         question: `"In space, no one can hear you scream." This was the famous tag line for which 1979 space thriller starring Sigourney Weaver?
         "`,
-        choices: ["The Terminator", "The Blob", "Swamp Thing", "Alien"]
+        choices: ["The Terminator", "The Blob", "Swamp Thing", "Alien"],
         answer: "Alien",
         user: ""
-        
     },
     {
         question: `Which 1979 movie about post-apocalyptic life in the Outback became a cult hit and put young Australian actor Mel Gibson on the fast track to super-stardom?`,
@@ -41,7 +40,7 @@ let qna = [{
     },
     {
         question: `This movie features a DeLorean that looks like a spaceship but is actually a time machine, a jacket that looks like a life vest, and Michael J. Fox using the musical stylings of Eddie Van Halen to torture his future father. Oh, the '80s! What's that movie title?`,
-        choices: ["Teen Wold", "Ferris Bueller's Day Off", " Time Bandits", "Back to the Future"],
+        choices: ["Teen Wolf", "Ferris Bueller's Day Off", " Time Bandits", "Back to the Future"],
         answer: "Back to the Future",
         user: ""
     },{
@@ -83,6 +82,8 @@ function show(){
         answer4.setAttribute("style", " ");
     
 }
+
+
 function hide(){
     countHide.setAttribute("style", "display:none");
     answer1.setAttribute("style", "display:none");
@@ -113,11 +114,13 @@ function timer(){
         }
         else if(answerCount === 10){
             alert("answer count is at 10. game is done!!")
+            hide();
+            clearInterval(timer);
         }
     }, 1000);
 }
 
-let check = function(){
+function answerCheck(){
     
 }
 
@@ -141,6 +144,10 @@ test.onclick = function change(){
         timerCheck = true;
     }
     else if(timerCheck === true){
+        let response = this.getAttribute("data-answer");
+        console.log(response)
+        qna[answerCount]["user"] = response;
+        console.log(qna[answerCount]["user"]);
         answerCount++
     }
     
