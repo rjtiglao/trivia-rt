@@ -16,7 +16,7 @@ let qna = [{
     },
     {
         question: `Which 1979 movie about post-apocalyptic life in the Outback became a cult hit and put young Australian actor Mel Gibson on the fast track to super-stardom?`,
-        choices: ["Mad Max", "Bird on a Wire", "Lethal Weapon", " The Bounty"],
+        choices: ["Mad Max", "Bird on a Wire", "Lethal Weapon", "The Bounty"],
         answer: "Mad Max",
         user: ""
     },
@@ -40,13 +40,13 @@ let qna = [{
     },
     {
         question: `This movie features a DeLorean that looks like a spaceship but is actually a time machine, a jacket that looks like a life vest, and Michael J. Fox using the musical stylings of Eddie Van Halen to torture his future father. Oh, the '80s! What's that movie title?`,
-        choices: ["Teen Wolf", "Ferris Bueller's Day Off", " Time Bandits", "Back to the Future"],
+        choices: ["Teen Wolf", "Ferris Bueller's Day Off", "Time Bandits", "Back to the Future"],
         answer: "Back to the Future",
         user: ""
     },{
         question: `Harrison Ford, trying to avoid being typecast for all time as street-wise gunslinging crook Han Solo, took the role of street-wise gunslinging cop Rick Deckard (see, the haircut is totally different), whose job is to hunt down a few rogue androids in the streets of Los Angeles in this film. Name the film.`,
         choices: ["Raiders of the Lost Ark", "Force 10 From Navarone", "Blade Runner", "Witness"],
-        answer: "Bladee Runner",
+        answer: "Blade Runner",
         user: ""
     },{
         question: `An ocean liner is found in the Gobi Desert, Richard Dreyfuss gets a sunburn on half of his face, and spaceships shaped like ice cream cones fail to pay the Ohio highway toll. Throw in Devil's Tower and a government cover-up, and you get what movie?`,
@@ -71,6 +71,7 @@ let countHide = document.getElementById("countHide");
 let hidden = answer2.getAttribute("style");
 let count = 0;
 let answerCount=0;
+let correctAnswer=0;
 let timerCheck = false;
 
 
@@ -103,6 +104,7 @@ function timer(){
         if (sec < 0 && min < 0) {
             hide();
             clearInterval(timer);
+            answerCheck();
             // run function to check score
             //change qcontainer to contain score, thanks for playing message and gif
         }
@@ -116,19 +118,22 @@ function timer(){
             alert("answer count is at 10. game is done!!")
             hide();
             clearInterval(timer);
+            answerCheck();
         }
     }, 1000);
 }
 
 function answerCheck(){
-    
+    for(i=0;i<qna.length;i++){
+        let userResponse = qna[i]["user"]
+        let answer = qna[i]["answer"]
+        console.log(`User: ${userResponse} and Answer: ${answer}`);
+        if(userResponse === answer){
+            correctAnswer++
+        }
+    }
+    console.log(`You got ${correctAnswer} right!`)
 }
-
-
-
-// let test = document.getElementsByClassName("aContainer");
-// console.log(answer1);
-
 //MAIN CODE
 
 // document.getElementById("answer1").onclick = function change(e){
@@ -167,6 +172,7 @@ function answerCheck(){
     answer4.setAttribute("data-answer",qna[answerCount]["choices"][3]);
 
 }; 
+
 answer1.onclick = change;
 answer2.onclick = change;
 answer3.onclick = change;
