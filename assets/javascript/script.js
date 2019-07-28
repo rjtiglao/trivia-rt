@@ -113,7 +113,6 @@ function timer(){
             //change qcontainer to contain score, thanks for playing message and gif
         }
         else if(answerCount === 10){
-            alert("answer count is at 10. game is done!!")
             hide();
             clearInterval(timer);
             answerCheck();
@@ -153,11 +152,8 @@ function answerCheck(){
         console.log(qna[answerCount]["user"]);
         answerCount++
     }
-    
-    alert("Game has started")
     count++
 
-   
     document.getElementById("question").innerHTML = qna[answerCount]["question"];
     
     // updates text in buttons with choices appropriate for the question
