@@ -5,60 +5,60 @@
 let qna = [{
         question: "One of the first science fiction films to be taken seriously by critics and movie-goers alike, this 1968 movie was made by Stanley Kubrick. Which film is this?",
         choices:["Fantastic Voyage", "Plan 9 From Outer Space","Metropolis","2001: A Space Odyssey"],
-        answer: "Fantasy Voyage",
+        answer: "2001: A Space Odyssey",
         user: ""
     },{
         question: `"In space, no one can hear you scream." This was the famous tag line for which 1979 space thriller starring Sigourney Weaver?
         "`,
         choices: ["The Terminator", "The Blob", "Swamp Thing", "Alien"]
-        answer: "This is the answer!!",
+        answer: "Alien",
         user: ""
         
     },
     {
         question: `Which 1979 movie about post-apocalyptic life in the Outback became a cult hit and put young Australian actor Mel Gibson on the fast track to super-stardom?`,
         choices: ["Mad Max", "Bird on a Wire", "Lethal Weapon", " The Bounty"],
-        answer: "",
+        answer: "Mad Max",
         user: ""
     },
     {
         question: `"I'll be back." Arnold turned this simple line into his greatest catchphrase, and this movie spawned a robot army of stunt-spectacular sequels, a Universal Studios attraction, and a TV show. Which movie is this?`,
         choices: ["Commando", "The Terminator", "I,Robot", "Robocop"],
-        answer: "",
+        answer: "The Terminator",
         user: ""
     },
     {
         question: `"What are you trying to tell me? That I can dodge bullets?" Well, thanks to the ground-breaking "bullet time" special effects created for this 1999 movie, when he was ready, Keanu Reeves didn't have to. What's the movie?`,
         choices: ["Johnny Mcemonit", "V for Vendetta", "Equilibrium", "The Matrix"],
-        answer: "",
+        answer: "The Matrix",
         user: ""
     },
     {
         question: `Will Smith stars as Capt. Steven Hiller in this movie, the top grossing movie in 1996. Hey, it's not every day you get to save the world AND punch tentacled aliens in the face! What movie is this?`,
         choices: ["Wild Wild West", "I Am Legend", "Independence Day", "Bad Boys"],
-        answer: "",
+        answer: "Independence Day",
         user: ""
     },
     {
         question: `This movie features a DeLorean that looks like a spaceship but is actually a time machine, a jacket that looks like a life vest, and Michael J. Fox using the musical stylings of Eddie Van Halen to torture his future father. Oh, the '80s! What's that movie title?`,
         choices: ["Teen Wold", "Ferris Bueller's Day Off", " Time Bandits", "Back to the Future"],
-        answer: "",
+        answer: "Back to the Future",
         user: ""
     },{
         question: `Harrison Ford, trying to avoid being typecast for all time as street-wise gunslinging crook Han Solo, took the role of street-wise gunslinging cop Rick Deckard (see, the haircut is totally different), whose job is to hunt down a few rogue androids in the streets of Los Angeles in this film. Name the film.`,
         choices: ["Raiders of the Lost Ark", "Force 10 From Navarone", "Blade Runner", "Witness"],
-        answer: "",
+        answer: "Bladee Runner",
         user: ""
     },{
         question: `An ocean liner is found in the Gobi Desert, Richard Dreyfuss gets a sunburn on half of his face, and spaceships shaped like ice cream cones fail to pay the Ohio highway toll. Throw in Devil's Tower and a government cover-up, and you get what movie?`,
         choices: ["The X Files", "E.T", "Close Encounters of the Third Kind", "Jaws"],
-        answer: "",
+        answer: "Close Encounters of the Third Kind",
         user: ""  
     },
     {
         question: `One of the most technically innovative movies in filmmaking history, and certainly one of the most popular, this movie took place in a galaxy far, far away and forever changed the way movies were made and watched. Name this movie.`,
         choices: ["Start Trek: The Motion Picture", "Star Wars", "Howard the Duck", " Battlefield Earth"],
-        answer: "",
+        answer: "Star Wars",
         user: ""
     }
 ];
