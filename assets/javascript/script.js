@@ -126,13 +126,13 @@ function answerCheck(){
 
 
 
-let test = document.getElementById("answer1");
-console.log(answer1);
-
+// let test = document.getElementsByClassName("aContainer");
+// console.log(answer1);
 
 //MAIN CODE
 
-test.onclick = function change(){
+// document.getElementById("answer1").onclick = function change(e){
+ function change(){
 
     // displays rest of buttons
     if(hidden === "display:none"){
@@ -145,7 +145,6 @@ test.onclick = function change(){
     }
     else if(timerCheck === true){
         let response = this.getAttribute("data-answer");
-        console.log(response)
         qna[answerCount]["user"] = response;
         console.log(qna[answerCount]["user"]);
         answerCount++
@@ -167,11 +166,8 @@ test.onclick = function change(){
     answer3.setAttribute("data-answer",qna[answerCount]["choices"][2]);
     answer4.setAttribute("data-answer",qna[answerCount]["choices"][3]);
 
-};
-
-// document.getElementById(`#button`).innerHTML = "Hello World!";
-
-// asking a question and saving the answer
-
-
-
+}; 
+answer1.onclick = change;
+answer2.onclick = change;
+answer3.onclick = change;
+answer4.onclick = change;
