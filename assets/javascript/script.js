@@ -4,15 +4,64 @@
 // Objects
 let qna = [{
         question: "One of the first science fiction films to be taken seriously by critics and movie-goers alike, this 1968 movie was made by Stanley Kubrick. Which film is this?",
-        choices:["Fantastic Voyage", "this is choice 2","this is choice 3","this is choice 4"],
-        answer: "this is choice 2",
+        choices:["Fantastic Voyage", "Plan 9 From Outer Space","Metropolis","2001: A Space Odyssey"],
+        answer: "Fantasy Voyage",
         user: ""
     },{
-        question: "This is the question!",
+        question: `"In space, no one can hear you scream." This was the famous tag line for which 1979 space thriller starring Sigourney Weaver?
+        "`,
+        choices: ["The Terminator", "The Blob", "Swamp Thing", "Alien"]
         answer: "This is the answer!!",
         user: ""
         
-    }];
+    },
+    {
+        question: `Which 1979 movie about post-apocalyptic life in the Outback became a cult hit and put young Australian actor Mel Gibson on the fast track to super-stardom?`,
+        choices: ["Mad Max", "Bird on a Wire", "Lethal Weapon", " The Bounty"],
+        answer: "",
+        user: ""
+    },
+    {
+        question: `"I'll be back." Arnold turned this simple line into his greatest catchphrase, and this movie spawned a robot army of stunt-spectacular sequels, a Universal Studios attraction, and a TV show. Which movie is this?`,
+        choices: ["Commando", "The Terminator", "I,Robot", "Robocop"],
+        answer: "",
+        user: ""
+    },
+    {
+        question: `"What are you trying to tell me? That I can dodge bullets?" Well, thanks to the ground-breaking "bullet time" special effects created for this 1999 movie, when he was ready, Keanu Reeves didn't have to. What's the movie?`,
+        choices: ["Johnny Mcemonit", "V for Vendetta", "Equilibrium", "The Matrix"],
+        answer: "",
+        user: ""
+    },
+    {
+        question: `Will Smith stars as Capt. Steven Hiller in this movie, the top grossing movie in 1996. Hey, it's not every day you get to save the world AND punch tentacled aliens in the face! What movie is this?`,
+        choices: ["Wild Wild West", "I Am Legend", "Independence Day", "Bad Boys"],
+        answer: "",
+        user: ""
+    },
+    {
+        question: `This movie features a DeLorean that looks like a spaceship but is actually a time machine, a jacket that looks like a life vest, and Michael J. Fox using the musical stylings of Eddie Van Halen to torture his future father. Oh, the '80s! What's that movie title?`,
+        choices: ["Teen Wold", "Ferris Bueller's Day Off", " Time Bandits", "Back to the Future"],
+        answer: "",
+        user: ""
+    },{
+        question: `Harrison Ford, trying to avoid being typecast for all time as street-wise gunslinging crook Han Solo, took the role of street-wise gunslinging cop Rick Deckard (see, the haircut is totally different), whose job is to hunt down a few rogue androids in the streets of Los Angeles in this film. Name the film.`,
+        choices: ["Raiders of the Lost Ark", "Force 10 From Navarone", "Blade Runner", "Witness"],
+        answer: "",
+        user: ""
+    },{
+        question: `An ocean liner is found in the Gobi Desert, Richard Dreyfuss gets a sunburn on half of his face, and spaceships shaped like ice cream cones fail to pay the Ohio highway toll. Throw in Devil's Tower and a government cover-up, and you get what movie?`,
+        choices: ["The X Files", "E.T", "Close Encounters of the Third Kind", "Jaws"],
+        answer: "",
+        user: ""  
+    },
+    {
+        question: `One of the most technically innovative movies in filmmaking history, and certainly one of the most popular, this movie took place in a galaxy far, far away and forever changed the way movies were made and watched. Name this movie.`,
+        choices: ["Start Trek: The Motion Picture", "Star Wars", "Howard the Duck", " Battlefield Earth"],
+        answer: "",
+        user: ""
+    }
+];
 
 //Variables
 let answer1 = document.getElementById("answer1");
@@ -23,6 +72,7 @@ let countHide = document.getElementById("countHide");
 let hidden = answer2.getAttribute("style");
 let count = 0;
 let answerCount=0;
+let timerCheck = false;
 
 
 // FUNCTIONS
@@ -41,11 +91,13 @@ function hide(){
     answer4.setAttribute("style", "display:none");
 }
  
+
+// starts a 3 minute timer and updates every second
 function timer(){
-    var sec = 2;
+    var sec = 59;
     var min = 2;
     var timer = setInterval(function(){
-        document.getElementById('countDown').innerHTML=`${min}: ${sec}`;
+        document.getElementById('countDown').innerHTML=` 0${min} : ${sec}`;
         sec--;
         if (sec < 0 && min < 0) {
             hide();
@@ -58,6 +110,9 @@ function timer(){
             sec = 59;
             // run function to check score
             //change qcontainer to contain score, thanks for playing message and gif
+        }
+        else if(answerCount === 10){
+            alert("answer count is at 10. game is done!!")
         }
     }, 1000);
 }
@@ -80,10 +135,19 @@ test.onclick = function change(){
     if(hidden === "display:none"){
         show();
     }
+    // starts timer
+    if(timerCheck === false){
+        timer();
+        timerCheck = true;
+    }
+    else if(timerCheck === true){
+        answerCount++
+    }
     
     alert("Game has started")
     count++
-    timer();
+
+   
     document.getElementById("question").innerHTML = qna[answerCount]["question"];
     
     // updates text in buttons with choices appropriate for the question
@@ -95,6 +159,7 @@ test.onclick = function change(){
     answer2.setAttribute("data-answer",qna[answerCount]["choices"][1]);
     answer3.setAttribute("data-answer",qna[answerCount]["choices"][2]);
     answer4.setAttribute("data-answer",qna[answerCount]["choices"][3]);
+
 };
 
 // document.getElementById(`#button`).innerHTML = "Hello World!";
