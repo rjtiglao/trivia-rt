@@ -78,10 +78,9 @@ let timerCheck = false;
 // FUNCTIONS
 function show(){
         // displays rest of buttons
-        answer2.setAttribute("style", " ");
-        answer3.setAttribute("style", " ");
-        answer4.setAttribute("style", " ");
-    
+    answer2.setAttribute("style", " ");
+    answer3.setAttribute("style", " ");
+    answer4.setAttribute("style", " ");
 }
 
 
